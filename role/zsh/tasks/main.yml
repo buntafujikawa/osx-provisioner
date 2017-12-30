@@ -1,0 +1,15 @@
+---
+- name: Check brew list zsh
+  shell: brew list | grep zsh
+  register: zsh_is_installed
+  ignore_errors: True
+  changed_when: False
+
+- name: Update /etc/shells
+  lineinfile: dest=/etc/shells state=present line='/usr/local/bin/zsh'
+  become: yes
+  when: zsh_is_installed != ""
+
+- name: Change default shell to zsh
+  shell: chpass -s /usr/local/bin/zsh
+  when: ( login_shell_path != "/usr/local/bin/zsh" ) and ( zsh_is_installed != "" )

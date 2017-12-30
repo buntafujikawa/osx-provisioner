@@ -1,0 +1,2 @@
+---
+login_shell_path: "{{ lookup('env','SHELL') }}"
