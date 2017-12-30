@@ -7,3 +7,4 @@
 
   roles:
     - { role: zsh, tags: zsh }
+    - { role: dotfiles, tags: dotfiles }

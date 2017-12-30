@@ -1,0 +1,4 @@
+---
+- name: Copy dotfiles to home directory
+  copy: src={{ item }} dest=~/{{ item }} force=yes backup=yes
+  with_items: "{{ dotfiles_name }}"
