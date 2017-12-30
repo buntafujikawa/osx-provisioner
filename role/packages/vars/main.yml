@@ -1,0 +1,41 @@
+homebrew_taps:
+  - homebrew/binary
+  - homebrew/dupes
+  - homebrew/php
+  - caskroom/cask
+homebrew_packages:
+  - { name: python }
+  - { name: ansible }
+  - { name: git }
+  - { name: wget }
+  - { name: curl }
+  - { name: tree }
+  - { name: nkf }
+  - { name: jq }
+  - { name: peco }
+  - { name: anyframe }
+  - { name: php-code-sniffer }
+  - { name: node }
+  - { name: rbenv }
+  - { name: ruby-build }
+  - { name: tmux }
+  - { name: vim, options: 'with-lua' }
+  - { name: zsh }
+  - { name: awscli }
+  - { name: terraform }
+  - { name: mysql }
+  - { name: gibo }
+  - { name: ctags }
+  - { name: tig }
+homebrew_cask_packages:
+  - { name: iterm2 }
+  - { name: google-chrome }
+  - { name: firefox }
+  - { name: slack }
+  - { name: vagrant }
+  - { name: virtualbox }
+  - { name: java }
+  - { name: docker }
+  - { name: shiftit }
+gem_packages:
+  - { name: terraforming }
