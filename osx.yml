@@ -6,5 +6,6 @@
     HOMEBREW_CASK_OPTS: "--appdir=/Applications"
 
   roles:
+    - { role: packages, tags: packages }
     - { role: zsh, tags: zsh }
     - { role: dotfiles, tags: dotfiles }
