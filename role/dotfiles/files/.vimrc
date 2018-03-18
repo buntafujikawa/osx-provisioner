@@ -48,6 +48,11 @@ set history=1000
 
 set nf=""
 
+"カラースキームの設定
+set t_Co=256↲
+syntax on↲
+colorscheme molokai-↲
+
 "-------ソフトタブ------
 set expandtab
 set tabstop=2
