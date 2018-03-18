@@ -53,7 +53,7 @@ set nf=""
 "カラースキームの設定
 set t_Co=256↲
 syntax on↲
-colorscheme molokai-↲
+colorscheme molokai
 
 "-------ソフトタブ------
 set expandtab
