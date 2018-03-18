@@ -19,6 +19,8 @@ set wildmenu wildmode=list:longest,full
 " 行末・行頭から次の行へ移動可能に
 set whichwrap+=h,l,<,>,[,],b,s
 
+" OSのクリップボードを使用する
+set clipboard+=unnamed
 
 "-------表示------
 " 対応する括弧の強調
