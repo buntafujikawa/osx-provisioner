@@ -38,3 +38,22 @@ $ make
 ```
 $ make test
 ```
+
+- Only packages install/update
+
+```
+$ make packages
+```
+
+- Only zsh install/update
+
+```
+$ make zsh
+```
+
+- Only dotfiles install/update
+
+```
+$ make dot
+```
+
