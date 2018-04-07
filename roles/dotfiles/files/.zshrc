@@ -3,6 +3,7 @@ export LANG=ja_JP.UTF-8
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="/tools/ethereum/Geth-1.6.5:$PATH"
 export PATH=$PATH:$HOME/.nodebrew/current/bin
+export PATH="$HOME/.composer/vendor/bin:$PATH"
 eval "$(rbenv init -)"
 eval "$(fasd --init auto)"
 
