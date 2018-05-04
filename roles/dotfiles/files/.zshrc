@@ -1,9 +1,9 @@
 # 環境変数
 export LANG=ja_JP.UTF-8
 export PATH="$HOME/.rbenv/bin:$PATH"
-export PATH="/tools/ethereum/Geth-1.6.5:$PATH"
 export PATH=$PATH:$HOME/.nodebrew/current/bin
 export PATH="$HOME/.composer/vendor/bin:$PATH"
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 eval "$(rbenv init -)"
 eval "$(fasd --init auto)"
 
@@ -193,3 +193,4 @@ bindkey '^g^p' _git_push
 bindkey '^g^c' _git_commit
 bindkey '^g^a' _git_add
 bindkey '^g^pl' _git_pull
+
