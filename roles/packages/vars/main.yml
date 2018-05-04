@@ -39,3 +39,5 @@ homebrew_cask_packages:
   - { name: shiftit }
 gem_packages:
   - { name: terraforming }
+  - { name: sass }
+  - { name: compass }
