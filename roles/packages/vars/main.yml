@@ -28,6 +28,8 @@ homebrew_packages:
   - { name: ctags }
   - { name: tig }
   - { name: ssh-copy-id }
+  - { name: docker }
+  - { name: docker-compose }
 homebrew_cask_packages:
   - { name: iterm2 }
   - { name: google-chrome }
