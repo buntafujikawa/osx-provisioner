@@ -4,8 +4,6 @@ homebrew_taps:
   - homebrew/php
   - caskroom/cask
 homebrew_packages:
-  - { name: python }
-  - { name: ansible }
   - { name: git }
   - { name: wget }
   - { name: curl }
