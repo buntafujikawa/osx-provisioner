@@ -1,6 +1,6 @@
 ---
-- name: Copy dotfiles to home directory
-  copy: src={{ item }} dest=~/{{ item }} force=yes backup=yes
+- name: Add symbolic link to dotfiles
+  shell: ln -s ~/projects/osx-provisioner/dotfiles/{{ item }} ~/{{ item }}
   with_items: "{{ dotfiles_name }}"
 
 - name: molokai location config file directory
