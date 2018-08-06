@@ -30,6 +30,7 @@ homebrew_packages:
   - { name: ssh-copy-id }
   - { name: docker }
   - { name: docker-compose }
+  - { name: nkf }
 homebrew_cask_packages:
   - { name: iterm2 }
   - { name: google-chrome }
