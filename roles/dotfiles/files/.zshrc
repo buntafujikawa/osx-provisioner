@@ -5,6 +5,7 @@ export PATH=$PATH:$HOME/.nodebrew/current/bin
 export PATH="$HOME/.composer/vendor/bin:$PATH"
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="/usr/local/opt/php@7.1/bin:$PATH"
+export PATH="/usr/local/opt/julia/bin:$PATH"
 # see https://qiita.com/itochan/items/c536c783b3d03d37279f
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 
