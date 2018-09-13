@@ -29,6 +29,7 @@ homebrew_packages:
   - { name: docker }
   - { name: docker-compose }
   - { name: nkf }
+  - { name: nmap }
 homebrew_cask_packages:
   - { name: iterm2 }
   - { name: google-chrome }
