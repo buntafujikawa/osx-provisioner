@@ -57,3 +57,6 @@ $ make zsh
 $ make dot
 ```
 
+## IDE
+Import `settings.jar` into JetBrains IDE.  
+[Exporting and Importing Settings](https://www.jetbrains.com/help/phpstorm/exporting-and-importing-settings.html)
