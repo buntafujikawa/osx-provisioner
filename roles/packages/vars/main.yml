@@ -46,3 +46,4 @@ gem_packages:
   - { name: terraforming }
   - { name: sass }
   - { name: compass }
+  - { name: i2cssh }
