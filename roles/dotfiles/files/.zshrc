@@ -64,7 +64,7 @@ setopt extended_glob
 setopt print_eight_bit
 
 # beep を無効にする
- setopt no_beep
+setopt no_beep
 
 # フローコントロールを無効にする
 setopt no_flow_control
@@ -199,4 +199,12 @@ bindkey '^g^p' _git_push
 bindkey '^g^c' _git_commit
 bindkey '^g^a' _git_add
 bindkey '^g^pl' _git_pull
+
+
+function _history_peco() {
+    history | peco
+}
+
+zle -N _history_peco
+bindkey '^p' _history_peco
 
