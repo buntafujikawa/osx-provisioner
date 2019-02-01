@@ -147,60 +147,6 @@ RPROMPT=$'$(vcs_info_wrapper)'
 
 ##########################################
 #make widget
-
-function _git_push() {
-    if [ "$(git rev-parse --is-inside-work-tree 2> /dev/null)" = 'true' ]; then
-        echo -n git push origin
-    fi
-}
-
-zle -N _git_push
-
-function _git_commit() {
-    if [ "$(git rev-parse --is-inside-work-tree 2> /dev/null)" = 'true' ]; then
-        echo -n git commit -m
-    fi
-}
-
-zle -N _git_commit
-
-function _git_add() {
-    if [ "$(git rev-parse --is-inside-work-tree 2> /dev/null)" = 'true' ]; then
-        echo -n git add
-    fi
-}
-
-zle -N _git_add
-
-function _git_status() {
-    if [ "$(git rev-parse --is-inside-work-tree 2> /dev/null)" = 'true' ]; then
-        echo git status -sb
-        git status -sb
-    fi
-}
-
-zle -N _git_status
-
-function _git_pull() {
-    if [ "$(git rev-parse --is-inside-work-tree 2> /dev/null)" = 'true' ]; then
-        echo git pull origin
-    fi
-}
-
-zle -N _git_pull
-
-##########################################
-# bindkey
-bindkey '^e^h' anyframe-widget-execute-history
-bindkey '^p^h' anyframe-widget-put-history
-bindkey '^k' anyframe-widget-kill
-bindkey '^g^s' _git_status
-bindkey '^g^p' _git_push
-bindkey '^g^c' _git_commit
-bindkey '^g^a' _git_add
-bindkey '^g^pl' _git_pull
-
-
 function _history_peco() {
     history | peco
 }
