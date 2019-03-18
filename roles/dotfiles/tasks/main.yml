@@ -4,10 +4,10 @@
   with_items: "{{ dotfiles_name }}"
 
 - name: molokai location config file directory
-  file: path=~/.vim/colors state=directory owner=root group=root mode=0755
+  file: path=~/.vim/colors state=directory mode=0755
 
 - name: install molokai
   git: repo=https://github.com/tomasr/molokai.git dest=~/.vim/colors/
 
 - name: copy molokai.vim
-  copy: src=~/.vim/colors/molokai/colors/molokai.vim dest=~/.vim/colors/
+  copy: src=~/.vim/colors/colors/molokai.vim dest=~/.vim/colors/
