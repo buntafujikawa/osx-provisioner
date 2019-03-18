@@ -11,5 +11,5 @@
   when: zsh_is_installed != ""
 
 - name: Change default shell to zsh
-  shell: chpass -s /usr/local/bin/zsh
+  shell: chsh -s /usr/local/bin/zsh
   when: ( login_shell_path != "/usr/local/bin/zsh" ) and ( zsh_is_installed != "" )
