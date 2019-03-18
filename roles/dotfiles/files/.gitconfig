@@ -1,0 +1,28 @@
+[core]
+    autoCRLF = false
+    excludesfile = /Users/bunta.fujikawa/.gitignore_global
+    editor = /usr/bin/vim
+[user]
+    name = buntafujikawa
+    email = bunta.fujikawa@gmail.com
+[difftool "sourcetree"]
+    cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+    path =
+[mergetool "sourcetree"]
+    cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+    trustExitCode = true
+[alias]
+   st = status
+   co = checkout
+   cm = commit
+   br = branch
+[secrets]
+    providers = git secrets --aws-provider
+    patterns = [A-Z0-9]{20}
+    patterns = (\"|’)?(AWS|aws|Aws)?_?(SECRET|secret|Secret)?_?(ACCESS|access|Access)?_?(KEY|key|Key)(\"|’)?\\s*(:|=>|=)\\s*(\"|’)?[A-Za-z0-9/\\+=]{40}(\"|’)?
+    patterns = (\"|’)?(AWS|aws|Aws)?_?(ACCOUNT|account|Account)_?(ID|id|Id)?(\"|’)?\\s*(:|=>|=)\\s*(\"|’)?[0-9]{4}\\-?[0-9]{4}\\-?[0-9]{4}(\"|’)?
+    allowed = AKIAIOSFODNN7EXAMPLE
+    allowed = wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+[commit]
+    template = /Users/bunta.fujikawa/.stCommitMsg
+[remote "origin"]

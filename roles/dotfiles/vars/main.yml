@@ -2,3 +2,5 @@
 dotfiles_name:
   - .zshrc
   - .vimrc
+  - .gitignore_global
+  - .gitconfig
