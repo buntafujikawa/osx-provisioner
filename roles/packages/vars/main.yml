@@ -42,6 +42,9 @@ homebrew_cask_packages:
   - { name: java }
   - { name: docker }
   - { name: shiftit }
+  - { name: sublime-text }
+  - { name: karabiner }
+  - { name: phpstorm }
 gem_packages:
   - { name: terraforming }
   - { name: sass }
