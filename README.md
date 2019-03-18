@@ -19,10 +19,10 @@ $ brew install python ansible
 
 ## Install
 
-1. Clone this repository on any directory.
+1. Clone this repository onto your Mac.
 
 ```
-$ git clone git@github.com:buntafujikawa/osx-provisioner.git
+$ git clone git@github.com:buntafujikawa/osx-provisioner.git ~/osx-provisioner
 ```
 
 
