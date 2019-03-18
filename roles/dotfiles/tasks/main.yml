@@ -1,6 +1,6 @@
 ---
 - name: Add symbolic link to dotfiles
-  shell: ln -s ~/workspace/osx-provisioner/dotfiles/{{ item }} ~/{{ item }}
+  shell: ln -s ~/osx-provisioner/dotfiles/{{ item }} ~/{{ item }}
   with_items: "{{ dotfiles_name }}"
 
 - name: molokai location config file directory
@@ -11,4 +11,3 @@
 
 - name: copy molokai.vim
   copy: src=~/.vim/colors/molokai/colors/molokai.vim dest=~/.vim/colors/
-
