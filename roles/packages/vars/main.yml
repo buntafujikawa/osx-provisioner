@@ -1,7 +1,5 @@
 homebrew_taps:
-  - homebrew/binary
-  - homebrew/dupes
-  - homebrew/php
+  - homebrew/core
   - caskroom/cask
 homebrew_packages:
   - { name: git }
@@ -11,7 +9,6 @@ homebrew_packages:
   - { name: nkf }
   - { name: jq }
   - { name: peco }
-  - { name: anyframe }
   - { name: php-code-sniffer }
   - { name: node }
   - { name: rbenv }
@@ -45,6 +42,8 @@ homebrew_cask_packages:
   - { name: sublime-text }
   - { name: karabiner }
   - { name: phpstorm }
+  - { name: mysqlworkbench }
+  - { name: clipy }
 gem_packages:
   - { name: terraforming }
   - { name: sass }
