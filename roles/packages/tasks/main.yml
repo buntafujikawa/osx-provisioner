@@ -51,3 +51,10 @@
   file: path=~/.zsh state=directory mode=0755
 - name: install anyframe
   git: repo=https://github.com/mollifier/anyframe.git dest=~/.zsh/
+
+- name: molokai location config file directory
+  file: path=~/.vim/colors state=directory mode=0755
+- name: install molokai
+  git: repo=https://github.com/tomasr/molokai.git dest=~/.vim/colors/
+- name: copy molokai.vim
+  copy: src=~/.vim/colors/colors/molokai.vim dest=~/.vim/colors/
