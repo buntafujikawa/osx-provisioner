@@ -9,3 +9,4 @@
     - { role: packages, tags: packages }
     - { role: zsh, tags: zsh }
     - { role: dotfiles, tags: dotfiles }
+    - { role: karabiner, tags: karabiner }

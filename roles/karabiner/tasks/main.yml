@@ -1,0 +1,3 @@
+---
+- name: Copy karabiner settings file to config directory
+  copy: src=../files/karabiner.json dest=~/.config/karabiner/karabiner.json
