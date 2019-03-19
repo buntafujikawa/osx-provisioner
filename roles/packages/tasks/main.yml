@@ -1,4 +1,5 @@
 ---
+# taps
 - name: Tap external Homebrew repositories
   homebrew_tap: tap={{ item }} state=present
   with_items: "{{ homebrew_taps }}"
@@ -26,6 +27,7 @@
   shell: brew info {{ item }} > brew_info/{{ item }}
   with_items: "{{ brew_result.results | selectattr('changed') | map(attribute='item') | map(attribute='name') | list }}"
 
+# TODO FIXME: Stop this task if packages are installed
 # cask
 - name: Install/Upgrade Homebrew Cask packages
   homebrew_cask: name={{ item.name }} state={{ item.state|default('installed') }}
@@ -43,3 +45,9 @@
 - name: Install/Upgrade gem packages
   gem: name={{ item.name }} state={{ item.state|default('latest') }}
   with_items: "{{ gem_packages }}"
+
+# others
+- name: Make directory for zsh
+  file: path=~/.zsh state=directory mode=0755
+- name: install anyframe
+  git: repo=https://github.com/mollifier/anyframe.git dest=~/.zsh/
