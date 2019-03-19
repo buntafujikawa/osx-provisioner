@@ -13,3 +13,5 @@ zsh:
 dot:
 	ansible-playbook osx.yml -i "localhost," --tags=dotfiles
 
+karabiner:
+	ansible-playbook osx.yml -i "localhost," --tags=karabiner
