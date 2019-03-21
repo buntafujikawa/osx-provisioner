@@ -127,6 +127,20 @@ alias sudo='sudo '
 
 #######################################
 # Git
+alias st='git status'
+alias co='git checkout'
+alias add='git add'
+alias cm='git commit -m'
+alias br='git branch'
+alias diff='git diff'
+alias diffc='git diff --cached'
+alias push='git push origin'
+alias pull='git pull origin'
+alias lg='git log'
+alias lgl='git log --oneline'
+alias fetch='git fetch'
+alias stash='git stash save'
+
 setopt prompt_subst
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' actionformats \
