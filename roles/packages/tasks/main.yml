@@ -46,6 +46,12 @@
   gem: name={{ item.name }} state={{ item.state|default('latest') }}
   with_items: "{{ gem_packages }}"
 
+# composer
+- composer:
+    command: require
+    global_command: yes
+    arguments: laravel/installer
+
 # others
 - name: Make directory for zsh
   file: path=~/.zsh state=directory mode=0755
