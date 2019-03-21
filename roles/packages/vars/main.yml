@@ -9,6 +9,7 @@ homebrew_packages:
   - { name: nkf }
   - { name: jq }
   - { name: peco }
+  - { name: composer }
   - { name: php-code-sniffer }
   - { name: node }
   - { name: rbenv }
