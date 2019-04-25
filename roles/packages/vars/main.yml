@@ -1,6 +1,7 @@
 homebrew_taps:
   - homebrew/core
   - caskroom/cask
+  - heroku/brew
 homebrew_packages:
   - { name: git }
   - { name: wget }
@@ -31,6 +32,7 @@ homebrew_packages:
   - { name: go }
   - { name: pandoc }
   - { name: ffmpeg }
+  - { name: heroku }
 homebrew_cask_packages:
   - { name: iterm2 }
   - { name: google-chrome }
