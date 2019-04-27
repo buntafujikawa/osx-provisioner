@@ -7,7 +7,7 @@ macOS provisioner just for me.
 
 ## Prerequisite Tasks
 
-1. Install Homebrew and Ansible.
+1. Install Homebrew and [Ansible](https://docs.ansible.com/ansible/latest/index.html).
 
 ```
 $ sudo xcodebuild -license

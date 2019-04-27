@@ -52,6 +52,12 @@
     global_command: yes
     arguments: laravel/installer
 
+# node
+- name: Install node.js package globally.
+  npm:
+    name: '@vue/cli'
+    global: yes
+
 # others
 - name: Make directory for zsh
   file: path=~/.zsh state=directory mode=0755
