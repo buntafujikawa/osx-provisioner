@@ -141,7 +141,9 @@ alias pullt='git pull origin HEAD'
 alias lg='git log'
 alias lgl='git log --oneline'
 alias fetch='git fetch'
-alias stash='git stash save'
+alias stash='git stash'
+alias stashs='git stash save'
+alias stashb='git stash apply stash@{0}'
 
 setopt prompt_subst
 autoload -Uz vcs_info
