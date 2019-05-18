@@ -53,10 +53,14 @@
     arguments: laravel/installer
 
 # node
+# Fixme define items in vars directly.
 - name: Install node.js package globally.
   npm:
-    name: '@vue/cli'
+    name: "{{ item }}"
     global: yes
+  with_items:
+    - '@vue/cli'
+    - typescript
 
 # others
 - name: Make directory for zsh
