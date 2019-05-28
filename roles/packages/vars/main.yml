@@ -33,6 +33,7 @@ homebrew_packages:
   - { name: pandoc }
   - { name: ffmpeg }
   - { name: heroku }
+  - { name: nvm }
 homebrew_cask_packages:
   - { name: iterm2 }
   - { name: google-chrome }
