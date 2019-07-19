@@ -127,6 +127,10 @@ alias awkill='anyframe-widget-kill'
 ## sudo の後のコマンドでエイリアスを有効にする
 alias sudo='sudo '
 
+## docker
+alias doc='docker'
+alias docc='docker ps'
+
 #######################################
 # Git
 alias st='git status'
