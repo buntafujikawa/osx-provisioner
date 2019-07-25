@@ -49,6 +49,7 @@ homebrew_cask_packages:
   - { name: phpstorm }
   - { name: mysqlworkbench }
   - { name: clipy }
+  - { name: ngrok }
 gem_packages:
   - { name: terraforming }
   - { name: sass }
