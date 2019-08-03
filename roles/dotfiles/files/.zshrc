@@ -152,10 +152,20 @@ alias stashs='git stash save'
 alias stashb='(){git stash apply stash@{$1}}'
 alias stashl='git stash list'
 alias rebase='git rebase'
-alias rebaseh='(){git rebase -i HEAD~$1}'
+alias rebasei='(){git rebase -i HEAD~$1}'
 alias rebasec='git rebase --continue'
 alias rebasea='git rebase --abort'
 
+# Laravel
+alias tinker='php artisan tinker'
+alias migrate='php artisan migrate'
+alias rollback='php artisan migrate:rollback'
+alias refresh='php artisan refresh'
+alias refreshs='php artisan refresh --seed'
+alias seed='(){php artisan db:seed --class=$1}'
+
+
+#
 setopt prompt_subst
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' actionformats \
