@@ -34,6 +34,7 @@ homebrew_packages:
   - { name: ffmpeg }
   - { name: heroku }
   - { name: nvm }
+  - { name: redis }
 homebrew_cask_packages:
   - { name: iterm2 }
   - { name: google-chrome }
