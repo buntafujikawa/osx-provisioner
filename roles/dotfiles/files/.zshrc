@@ -106,6 +106,7 @@ alias la='ls -a'
 alias ll='ls -l'
 alias lla='ls -al'
 alias his='history'
+alias m='make'
 
 ## fasdのエイリアス
 ## https://github.com/clvv/fasd
@@ -129,7 +130,9 @@ alias sudo='sudo '
 
 ## docker
 alias doc='docker'
-alias docc='docker ps'
+alias docp='docker ps'
+alias dc='docker-compose'
+alias dcp='docker-compose ps'
 
 #######################################
 # Git
@@ -159,13 +162,13 @@ alias rebasec='git rebase --continue'
 alias rebasea='git rebase --abort'
 
 # Laravel
+alias art='php artisan'
 alias tinker='php artisan tinker'
 alias migrate='php artisan migrate'
 alias rollback='php artisan migrate:rollback'
 alias refresh='php artisan refresh'
 alias refreshs='php artisan refresh --seed'
 alias seed='(){php artisan db:seed --class=$1}'
-
 
 #
 setopt prompt_subst
