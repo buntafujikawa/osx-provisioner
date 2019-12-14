@@ -35,6 +35,7 @@ homebrew_packages:
   - { name: heroku }
   - { name: nvm }
   - { name: redis }
+  - { name: ghq }
 homebrew_cask_packages:
   - { name: iterm2 }
   - { name: google-chrome }

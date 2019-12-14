@@ -129,10 +129,11 @@ alias awkill='anyframe-widget-kill'
 alias sudo='sudo '
 
 ## docker
-alias doc='docker'
-alias docp='docker ps'
-alias dc='docker-compose'
-alias dcp='docker-compose ps'
+alias do='docker'
+alias dop='docker ps'
+alias doc='docker-compose'
+alias docp='docker-compose ps'
+alias docd='docker-compose down'
 
 #######################################
 # Git
@@ -165,7 +166,10 @@ alias rebasea='git rebase --abort'
 alias art='php artisan'
 alias tinker='php artisan tinker'
 alias migrate='php artisan migrate'
+alias migrates='php artisan migrate --seed'
 alias rollback='php artisan migrate:rollback'
+alias fresh='php artisan fresh'
+alias freshs='php artisan fresh --seed'
 alias refresh='php artisan refresh'
 alias refreshs='php artisan refresh --seed'
 alias seed='(){php artisan db:seed --class=$1}'
