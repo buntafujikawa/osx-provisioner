@@ -19,6 +19,10 @@ eval "$(fasd --init auto)"
 autoload -Uz compinit
 compinit
 
+# ディレクトリ移動の履歴を管理
+autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
+add-zsh-hook chpwd chpwd_recent_dirs
+
 # 補完で小文字でも大文字にマッチさせる
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
@@ -98,6 +102,42 @@ fpath=($HOME/.zsh/anyframe(N-/) $fpath)
 autoload -Uz anyframe-init
 anyframe-init
 
+## 過去に移動したことのあるディレクトリに移動する(cdrが必要)
+bindkey '^xb' anyframe-widget-cdr
+bindkey '^x^b' anyframe-widget-checkout-git-branch
+
+## コマンドライン履歴から選んで実行する
+bindkey '^xr' anyframe-widget-execute-history
+bindkey '^x^r' anyframe-widget-execute-history
+
+## コマンドライン履歴から選んでコマンドラインに挿入する
+bindkey '^xp' anyframe-widget-put-history
+bindkey '^x^p' anyframe-widget-put-history
+
+## ghqコマンドで管理しているリポジトリに移動する(ghqが必要)
+bindkey '^xg' anyframe-widget-cd-ghq-repository
+bindkey '^x^g' anyframe-widget-cd-ghq-repository
+
+## プロセスをkillする
+bindkey '^xk' anyframe-widget-kill
+bindkey '^x^k' anyframe-widget-kill
+
+## Gitブランチ名をコマンドラインに挿入する
+bindkey '^xi' anyframe-widget-insert-git-branch
+bindkey '^x^i' anyframe-widget-insert-git-branch
+
+## Gitブランチを切り替える
+bindkey '^xc' anyframe-widget-checkout-git-branch
+bindkey '^x^c' anyframe-widget-checkout-git-branch
+
+## ファイル名をコマンドラインに挿入する
+bindkey '^xf' anyframe-widget-insert-filename
+bindkey '^x^f' anyframe-widget-insert-filename
+
+bindkey '^xh' anyframe-widget-select-widget
+bindkey '^x^h' anyframe-widget-select-widget
+alias xh='anyframe-widget-select-widget'
+alias xhelp='anyframe-widget-select-widget'
 
 ########################################
 # エイリアス
@@ -192,13 +232,4 @@ vcs_info_wrapper() {
     fi
 }
 RPROMPT=$'$(vcs_info_wrapper)'
-
-##########################################
-#make widget
-function _history_peco() {
-    history | peco
-}
-
-zle -N _history_peco
-bindkey '^p' _history_peco
 
