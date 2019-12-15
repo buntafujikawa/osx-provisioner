@@ -38,18 +38,9 @@ zstyle ':completion:*:processes' command 'ps x -o pid,s,args'
 
 # cd したら自動的にpushdする
 setopt auto_pushd
+
 # 重複したディレクトリを追加しない
 setopt pushd_ignore_dups
-
-
-# グローバルエイリアス
-alias -g L='| less'
-alias -g G='| grep'
-
-# ヒストリの設定
-HISTFILE=~/.zsh_history
-HISTSIZE=1000000
-SAVEHIST=1000000
 
 # 同時に起動したzshの間でヒストリを共有する
 setopt share_history
@@ -84,6 +75,11 @@ setopt interactive_comments
 # ディレクトリ名だけでcdする
 setopt auto_cd
 
+# ヒストリの設定
+HISTFILE=~/.zsh_history
+HISTSIZE=1000000
+SAVEHIST=1000000
+
 ###########################################
 # カレントディレクトリ表示
 autoload colors
@@ -94,6 +90,25 @@ PROMPT="
  [%n]$ "
 
  PROMPT2='[%n]> '
+
+# vcs_info
+setopt prompt_subst
+autoload -Uz vcs_info
+zstyle ':vcs_info:*' actionformats \
+    '%F{5}(%f%s%F{5})%F{3}-%F{5}[%F{2}%b%F{3}|%F{1}%a%F{5}]%f '
+zstyle ':vcs_info:*' formats       \
+    '%F{5}(%f%s%F{5})%F{3}-%F{5}[%F{2}%b%F{5}]%f '
+zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b%F{1}:%F{3}%r'
+zstyle ':vcs_info:*' enable git cvs svn
+
+# or use pre_cmd, see man zshcontrib
+vcs_info_wrapper() {
+    vcs_info
+    if [ -n "$vcs_info_msg_0_" ]; then
+        echo "%{$fg[grey]%}${vcs_info_msg_0_}%{$reset_color%}$del"
+    fi
+}
+RPROMPT=$'$(vcs_info_wrapper)'
 
 ##########################################
 # anyframe
@@ -107,8 +122,10 @@ bindkey '^xb' anyframe-widget-cdr
 bindkey '^x^b' anyframe-widget-checkout-git-branch
 
 ## コマンドライン履歴から選んで実行する
-bindkey '^xr' anyframe-widget-execute-history
-bindkey '^x^r' anyframe-widget-execute-history
+# bindkey '^xr' anyframe-widget-execute-history
+# bindkey '^x^r' anyframe-widget-execute-history
+# これに置き換えてみたから使いにくかったら元に戻す
+bindkey '^r' anyframe-widget-execute-history
 
 ## コマンドライン履歴から選んでコマンドラインに挿入する
 bindkey '^xp' anyframe-widget-put-history
@@ -142,6 +159,8 @@ alias xhelp='anyframe-widget-select-widget'
 ########################################
 # エイリアス
 
+alias -g L='| less'
+alias -g G='| grep'
 alias la='ls -a'
 alias ll='ls -l'
 alias lla='ls -al'
@@ -159,12 +178,6 @@ alias sf='fasd -sif'     # interactive file selection
 alias z='fasd_cd -d'     # cd, same functionality as j in autojump
 alias zz='fasd_cd -d -i' # cd with interactive selection
 
-## anyframeのエイリアス
-alias ehis='anyframe-widget-execute-history'
-alias phis='anyframe-widget-put-history'
-alias awco='anyframe-widget-checkout-git-branch'
-alias awkill='anyframe-widget-kill'
-
 ## sudo の後のコマンドでエイリアスを有効にする
 alias sudo='sudo '
 
@@ -175,8 +188,7 @@ alias doc='docker-compose'
 alias docp='docker-compose ps'
 alias docd='docker-compose down'
 
-#######################################
-# Git
+## Git
 alias st='git status'
 alias co='git checkout'
 alias add='git add'
@@ -202,7 +214,7 @@ alias rebasei='(){git rebase -i HEAD~$1}'
 alias rebasec='git rebase --continue'
 alias rebasea='git rebase --abort'
 
-# Laravel
+## Laravel
 alias art='php artisan'
 alias tinker='php artisan tinker'
 alias migrate='php artisan migrate'
@@ -213,23 +225,3 @@ alias freshs='php artisan fresh --seed'
 alias refresh='php artisan refresh'
 alias refreshs='php artisan refresh --seed'
 alias seed='(){php artisan db:seed --class=$1}'
-
-#
-setopt prompt_subst
-autoload -Uz vcs_info
-zstyle ':vcs_info:*' actionformats \
-    '%F{5}(%f%s%F{5})%F{3}-%F{5}[%F{2}%b%F{3}|%F{1}%a%F{5}]%f '
-zstyle ':vcs_info:*' formats       \
-    '%F{5}(%f%s%F{5})%F{3}-%F{5}[%F{2}%b%F{5}]%f '
-zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b%F{1}:%F{3}%r'
-zstyle ':vcs_info:*' enable git cvs svn
-
-# or use pre_cmd, see man zshcontrib
-vcs_info_wrapper() {
-    vcs_info
-    if [ -n "$vcs_info_msg_0_" ]; then
-        echo "%{$fg[grey]%}${vcs_info_msg_0_}%{$reset_color%}$del"
-    fi
-}
-RPROMPT=$'$(vcs_info_wrapper)'
-
