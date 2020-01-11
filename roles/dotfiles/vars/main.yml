@@ -4,3 +4,5 @@ dotfiles_name:
   - .vimrc
   - .gitignore_global
   - .gitconfig
+  - .peco
+
