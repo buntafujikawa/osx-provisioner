@@ -114,6 +114,7 @@ RPROMPT=$'$(vcs_info_wrapper)'
 # anyframe
 ## https://qiita.com/mollifier/items/81b18c012d7841ab33c3
 fpath=($HOME/.zsh/anyframe(N-/) $fpath)
+fpath=($HOME/.zsh/anyframe-custom(N-/) $fpath)
 autoload -Uz anyframe-init
 anyframe-init
 
@@ -156,9 +157,16 @@ bindkey '^x^h' anyframe-widget-select-widget
 alias xh='anyframe-widget-select-widget'
 alias xhelp='anyframe-widget-select-widget'
 
+## Git stash
+bindkey '^xs' anyframe-widget-git-stash-apply
+bindkey '^x^s' anyframe-widget-git-stash-apply
+alias stasha='anyframe-widget-git-stash-apply'
+
+## laravel seeder
+alias seed='anyframe-widget-laravel-database-seeder'
+
 ########################################
 # エイリアス
-
 alias -g L='| less'
 alias -g G='| grep'
 alias la='ls -a'
@@ -224,4 +232,4 @@ alias fresh='php artisan fresh'
 alias freshs='php artisan fresh --seed'
 alias refresh='php artisan refresh'
 alias refreshs='php artisan refresh --seed'
-alias seed='(){php artisan db:seed --class=$1}'
+#alias seed='(){php artisan db:seed --class=$1}'
