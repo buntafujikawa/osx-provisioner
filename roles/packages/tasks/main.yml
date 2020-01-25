@@ -66,9 +66,12 @@
 
 # others
 - name: Make directory for zsh
-  file: path=~/.zsh state=directory mode=0755
+  file: path=~/.zsh/anyframe-custom state=directory mode=0755
 - name: install anyframe
   git: repo=https://github.com/mollifier/anyframe.git dest=~/.zsh/
+- name: install anyframe custom functions
+  git: repo=git@github.com:buntafujikawa/anyframe-functions.git dest=~/.zsh/anyframe-custom/
+
 
 - name: molokai location config file directory
   file: path=~/.vim/colors state=directory mode=0755
