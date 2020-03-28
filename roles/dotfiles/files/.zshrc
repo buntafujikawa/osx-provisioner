@@ -23,6 +23,10 @@ compinit
 autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
 add-zsh-hook chpwd chpwd_recent_dirs
 
+# Ctrl-Wでパスの文字列などをスラッシュ単位でdeleteできる
+#autoload -Uz select-word-style
+#select-word-style bash
+
 # 補完で小文字でも大文字にマッチさせる
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
@@ -74,6 +78,8 @@ setopt interactive_comments
 
 # ディレクトリ名だけでcdする
 setopt auto_cd
+# どこからでもディレクトリ名で移動できる
+cdpath=(.. ~ ~/src)
 
 # ヒストリの設定
 HISTFILE=~/.zsh_history
@@ -169,9 +175,10 @@ alias seed='anyframe-widget-laravel-database-seeder'
 # エイリアス
 alias -g L='| less'
 alias -g G='| grep'
-alias la='ls -a'
-alias ll='ls -l'
-alias lla='ls -al'
+alias la='ls -aG'
+alias ll='ls -lG'
+alias lla='ls -alG'
+alias l1='ls -a1G'
 alias his='history'
 alias m='make'
 
@@ -233,3 +240,10 @@ alias freshs='php artisan fresh --seed'
 alias refresh='php artisan refresh'
 alias refreshs='php artisan refresh --seed'
 #alias seed='(){php artisan db:seed --class=$1}'
+
+
+# Ctrl-Yで上のディレクトリに移動できる
+function cd-up { zle push-line && LBUFFER='builtin cd ..' && zle accept-line }
+zle -N cd-up
+bindkey "^Y" cd-up
+
