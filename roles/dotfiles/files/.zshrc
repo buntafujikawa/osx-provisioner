@@ -6,6 +6,7 @@ export PATH="$HOME/.composer/vendor/bin:$PATH"
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="/usr/local/opt/php@7.3/bin:$PATH"
 export PATH="/usr/local/opt/php@7.3/sbin:$PATH"
+export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 # see https://qiita.com/itochan/items/c536c783b3d03d37279f
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 export GOPATH=$HOME/go
@@ -79,7 +80,7 @@ setopt interactive_comments
 # ディレクトリ名だけでcdする
 setopt auto_cd
 # どこからでもディレクトリ名で移動できる
-cdpath=(.. ~ ~/src)
+cdpath=(.. ~ ~/workspace)
 
 # ヒストリの設定
 HISTFILE=~/.zsh_history
@@ -241,9 +242,18 @@ alias refresh='php artisan refresh'
 alias refreshs='php artisan refresh --seed'
 #alias seed='(){php artisan db:seed --class=$1}'
 
+alias yr='yarn run'
+alias yrw='yarn run watch'
+alias yrb='yarn run build'
+alias yrh='yarn run hot'
 
 # Ctrl-Yで上のディレクトリに移動できる
 function cd-up { zle push-line && LBUFFER='builtin cd ..' && zle accept-line }
 zle -N cd-up
 bindkey "^Y" cd-up
+
+# ディレクトリ作成して移動
+mkdirc(){
+  mkdir $1 && cd $1
+}
 
