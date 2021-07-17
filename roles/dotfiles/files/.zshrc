@@ -2,14 +2,17 @@
 export LANG=ja_JP.UTF-8
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH=$PATH:$HOME/.nodebrew/current/bin
+export PATH=$PATH:/Users/$USER/development/flutter/bin
 export PATH="$HOME/.composer/vendor/bin:$PATH"
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH="$PATH":"$HOME/.pub-cache/bin"
 export PATH="/usr/local/opt/php@7.4/bin:$PATH"
 export PATH="/usr/local/opt/php@7.4/sbin:$PATH"
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 # see https://qiita.com/itochan/items/c536c783b3d03d37279f
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 export GOPATH=$HOME/go
+export PATH="$HOME/.serverless/bin:$PATH"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
 
