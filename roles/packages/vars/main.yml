@@ -1,6 +1,5 @@
 homebrew_taps:
   - homebrew/core
-  - caskroom/cask
   - heroku/brew
 homebrew_packages:
   - { name: git }
@@ -41,14 +40,11 @@ homebrew_cask_packages:
   - { name: google-chrome }
   - { name: firefox }
   - { name: slack }
-  - { name: vagrant }
-  - { name: virtualbox }
-  - { name: java }
-  - { name: docker }
   - { name: shiftit }
   - { name: sublime-text }
-  - { name: karabiner }
+  - { name: karabiner-elements }
   - { name: phpstorm }
+  - { name: clion }
   - { name: mysqlworkbench }
   - { name: clipy }
   - { name: ngrok }

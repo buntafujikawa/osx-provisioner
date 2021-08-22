@@ -5,6 +5,6 @@
   register: dotfiles
 
 - name: Add symbolic link to dotfiles
-  shell: ln -s ~/osx-provisioner/dotfiles/{{ item }} ~/{{ item }}
+  shell: ln -s ~/osx-provisioner/dotfiles/{{ item.item }} ~/{{ item.item }}
   with_items: "{{ dotfiles.results }}"
   when: not item.stat.exists
