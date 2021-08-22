@@ -35,6 +35,8 @@ homebrew_packages:
   - { name: nvm }
   - { name: redis }
   - { name: ghq }
+  - { name: gcc }
+  - { name: fasd }
 homebrew_cask_packages:
   - { name: iterm2 }
   - { name: google-chrome }
